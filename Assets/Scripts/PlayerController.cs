@@ -39,5 +39,9 @@ public class PlayerController : MonoBehaviour, InputActions.IPlayerActions
 
     public void OnLaunchMixture(InputAction.CallbackContext context)
     {
+        if (context.performed)
+        {
+            cauldron.LaunchMixture();
+        }
     }
 }

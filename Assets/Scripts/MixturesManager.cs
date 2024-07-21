@@ -7,6 +7,14 @@ public class MixturesManager : MonoBehaviour
     [SerializeField] private Recipe[] recipes;
     [SerializeField] private Mixture flawedMixture;
 
+    private Mixture[] _validMixtures;
+
+    private void Awake()
+    {
+        var mixtures = FindObjectsOfType<Mixture>();
+        _validMixtures = mixtures.Where(mixture => mixture != flawedMixture).ToArray();
+    }
+
     public Mixture GetMixtureFromIngredients(List<Ingredient> ingredients)
     {
         var recipe = recipes.FirstOrDefault
@@ -15,5 +23,10 @@ public class MixturesManager : MonoBehaviour
                       recipe.Ingredients.TrueForAll(ingredients.Contains)
         );
         return recipe.Mixture ? recipe.Mixture : flawedMixture;
+    }
+
+    public Mixture GetRandomMixture()
+    {
+        return _validMixtures[Random.Range(0, _validMixtures.Length)];
     }
 }

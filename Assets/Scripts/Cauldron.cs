@@ -10,21 +10,21 @@ public class Cauldron : MonoBehaviour
 
     private Mixture _mixture;
 
-    private void Update()
-    {
-        // TODO: For testing purposes. Remove later.
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetCauldron();
-        }
-    }
-
     public void AddIngredient(Ingredient ingredient)
     {
         _ingredients.Add(ingredient);
         UpdateIngredientsPositions();
-        Debug.Log($"Added {ingredient.name} into the cauldron");
         UpdateMixture();
+    }
+
+    public void LaunchMixture()
+    {
+        var enemy = FindObjectOfType<Enemy>();
+        if (enemy != null)
+        {
+            enemy.Hit(_mixture);
+        }
+        Clear();
     }
 
     private void UpdateIngredientsPositions()
@@ -64,11 +64,9 @@ public class Cauldron : MonoBehaviour
     {
         _mixture = mixturesManager.GetMixtureFromIngredients(_ingredients);
         mixtureSprite.color = _mixture.Color;
-        Debug.Log($"Created {_mixture.name}");
     }
 
-    // TODO: For testing purposes. Remove later. 
-    private void ResetCauldron()
+    private void Clear()
     {
         mixtureSprite.color = Color.white;
         if (_ingredients.Count > 0)
@@ -76,6 +74,5 @@ public class Cauldron : MonoBehaviour
             MoveIngredientAwayFromCauldron(_ingredients[^1]);
         }
         _ingredients.Clear();
-        Debug.Log("Ingredients reset");
     }
 }
