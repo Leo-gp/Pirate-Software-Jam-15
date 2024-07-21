@@ -141,6 +141,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Launch Mixture"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4d0a28a-d5ff-45bc-b1fb-b3448fd1a009"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Launch Mixture"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

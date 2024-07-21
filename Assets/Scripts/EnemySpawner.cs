@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private EnemyFactory enemyFactory;
+    [SerializeField] private Transform spawnPosition;
 
     private void Start()
     {
@@ -21,7 +22,8 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         var enemy = enemyFactory.CreateEnemy();
-        enemy.gameObject.SetActive(true);
+        enemy.transform.position = spawnPosition.position;
+        enemy.ApproachPlayer();
     }
 
     // TODO: For testing purposes. Remove later.

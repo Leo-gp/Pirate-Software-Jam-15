@@ -19,6 +19,10 @@ public class Cauldron : MonoBehaviour
 
     public void LaunchMixture()
     {
+        if (_mixture is null)
+        {
+            return;
+        }
         var enemy = FindObjectOfType<Enemy>();
         if (enemy != null)
         {
@@ -68,6 +72,7 @@ public class Cauldron : MonoBehaviour
 
     private void Clear()
     {
+        _mixture = null;
         mixtureSprite.color = Color.white;
         if (_ingredients.Count > 0)
         {

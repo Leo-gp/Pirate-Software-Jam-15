@@ -18,6 +18,7 @@ public class EnemyFactory : MonoBehaviour
     public Enemy CreateEnemy()
     {
         var enemy = GetEnemyFromPool();
+        enemy.gameObject.SetActive(true);
         enemy.Initialize(GetRandomVulnerabilities());
         return enemy;
     }

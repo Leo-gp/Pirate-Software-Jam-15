@@ -1,18 +1,21 @@
 using System.Collections.Generic;
 using System.Linq;
+using PrimeTween;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private PlayerManager playerManager;
     [SerializeField] private SpriteRenderer[] vulnerabilitiesSprites;
+    [SerializeField] private float _timeToReachPlayer;
 
     private readonly Dictionary<Mixture, List<SpriteRenderer>> _vulnerabilitiesSpritesDict = new();
-
     private List<Mixture> _totalVulnerabilities;
     private List<Mixture> _remainingVulnerabilities;
 
     public void Initialize(List<Mixture> vulnerabilities)
     {
+        Tween.StopAll(transform);
         InitializeVulnerabilities(vulnerabilities);
     }
 
@@ -32,8 +35,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void ApproachPlayer()
+    {
+        Tween.PositionY(transform, playerManager.PlayerPosition.position.y, _timeToReachPlayer, Ease.Linear)
+            .OnComplete(this, target => target.OnReachedPlayer());
+    }
+
+    private void OnReachedPlayer()
+    {
+        playerManager.Hit();
+        Die();
+    }
+
     private void Die()
     {
+        Tween.StopAll(transform);
         gameObject.SetActive(false);
     }
 
