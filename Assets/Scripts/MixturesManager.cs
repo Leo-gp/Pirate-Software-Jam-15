@@ -7,12 +7,15 @@ public class MixturesManager : MonoBehaviour
     [SerializeField] private Recipe[] recipes;
     [SerializeField] private Mixture flawedMixture;
 
-    private Mixture[] _validMixtures;
+    private Mixture[] _simpleMixtures;
+    private Mixture[] _complexMixtures;
 
     private void Awake()
     {
         var mixtures = FindObjectsOfType<Mixture>();
-        _validMixtures = mixtures.Where(mixture => mixture != flawedMixture).ToArray();
+        var validMixtures = mixtures.Where(mixture => mixture != flawedMixture).ToArray();
+        _simpleMixtures = validMixtures.Where(mixture => mixture.Complexity == MixtureComplexity.Simple).ToArray();
+        _complexMixtures = validMixtures.Where(mixture => mixture.Complexity == MixtureComplexity.Complex).ToArray();
     }
 
     public Mixture GetMixtureFromIngredients(List<Ingredient> ingredients)
@@ -25,8 +28,13 @@ public class MixturesManager : MonoBehaviour
         return recipe.Mixture ? recipe.Mixture : flawedMixture;
     }
 
-    public Mixture GetRandomMixture()
+    public Mixture GetRandomSimpleMixture()
     {
-        return _validMixtures[Random.Range(0, _validMixtures.Length)];
+        return _simpleMixtures[Random.Range(0, _simpleMixtures.Length)];
+    }
+
+    public Mixture GetRandomComplexMixture()
+    {
+        return _complexMixtures[Random.Range(0, _complexMixtures.Length)];
     }
 }

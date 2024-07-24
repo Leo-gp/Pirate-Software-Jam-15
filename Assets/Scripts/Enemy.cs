@@ -7,15 +7,17 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private SpriteRenderer[] vulnerabilitiesSprites;
-    [SerializeField] private float _timeToReachPlayer;
 
     private readonly Dictionary<Mixture, List<SpriteRenderer>> _vulnerabilitiesSpritesDict = new();
+
+    private float _timeToReachPlayer;
     private List<Mixture> _totalVulnerabilities;
     private List<Mixture> _remainingVulnerabilities;
 
-    public void Initialize(List<Mixture> vulnerabilities)
+    public void Initialize(float timeToReachPlayer, List<Mixture> vulnerabilities)
     {
         Tween.StopAll(transform);
+        _timeToReachPlayer = timeToReachPlayer;
         InitializeVulnerabilities(vulnerabilities);
     }
 

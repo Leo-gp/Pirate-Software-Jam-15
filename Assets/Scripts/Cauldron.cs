@@ -4,6 +4,7 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour
 {
     [SerializeField] private MixturesManager mixturesManager;
+    [SerializeField] private EnemiesManager enemiesManager;
     [SerializeField] private SpriteRenderer mixtureSprite;
 
     private readonly List<Ingredient> _ingredients = new();
@@ -23,7 +24,7 @@ public class Cauldron : MonoBehaviour
         {
             return;
         }
-        var enemy = FindObjectOfType<Enemy>();
+        var enemy = enemiesManager.GetLowestEnemy();
         if (enemy != null)
         {
             enemy.Hit(_mixture);
