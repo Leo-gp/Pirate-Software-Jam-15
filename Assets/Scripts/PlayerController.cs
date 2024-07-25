@@ -1,16 +1,27 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour, InputActions.IPlayerActions
+public class PlayerController : MonoBehaviour, InputActions.IPlayerActions, InputActions.IUIActions
 {
     [SerializeField] private Cauldron cauldron;
     [SerializeField] private IngredientsManager ingredientsManager;
+    [SerializeField] private PauseManager pauseManager;
 
-    private void Start()
+    private InputActions _inputActions;
+
+    private void OnEnable()
     {
-        var inputActions = new InputActions();
-        inputActions.Player.SetCallbacks(this);
-        inputActions.Player.Enable();
+        _inputActions = new InputActions();
+        _inputActions.Player.SetCallbacks(this);
+        _inputActions.UI.SetCallbacks(this);
+        _inputActions.Player.Enable();
+        _inputActions.UI.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _inputActions.Player.RemoveCallbacks(this);
+        _inputActions.UI.RemoveCallbacks(this);
     }
 
     public void OnAddBlueIngredient(InputAction.CallbackContext context)
@@ -43,5 +54,23 @@ public class PlayerController : MonoBehaviour, InputActions.IPlayerActions
         {
             cauldron.LaunchMixture();
         }
+    }
+
+    public void OnTogglePauseMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            pauseManager.TogglePauseMenu();
+        }
+    }
+
+    public void DisablePlayerInput()
+    {
+        _inputActions.Player.Disable();
+    }
+
+    public void EnablePlayerInput()
+    {
+        _inputActions.Player.Enable();
     }
 }

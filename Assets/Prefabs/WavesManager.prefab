@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963c912d861c4a9297ad4bb5401262c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 0}
   wavesConfigurations:
   - {fileID: 11400000, guid: a01f89cb1b8a2244c8bb0ba4a89dfdb9, type: 2}
   - {fileID: 11400000, guid: 2620c86db4a599d4d9fa1501b9d32496, type: 2}

@@ -154,6 +154,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""28165a80-e0ef-460f-bad7-28ae87248ec5"",
+            ""actions"": [
+                {
+                    ""name"": ""Toggle Pause Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""9990cadf-3f4f-4695-a99a-49775d890156"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""101e5fa6-2958-42df-9a3a-706194f2e3a5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Toggle Pause Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -176,6 +204,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_AddYellowIngredient = m_Player.FindAction("Add Yellow Ingredient", throwIfNotFound: true);
         m_Player_AddRedIngredient = m_Player.FindAction("Add Red Ingredient", throwIfNotFound: true);
         m_Player_LaunchMixture = m_Player.FindAction("Launch Mixture", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_TogglePauseMenu = m_UI.FindAction("Toggle Pause Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -303,6 +334,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_TogglePauseMenu;
+    public struct UIActions
+    {
+        private @InputActions m_Wrapper;
+        public UIActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TogglePauseMenu => m_Wrapper.m_UI_TogglePauseMenu;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @TogglePauseMenu.started += instance.OnTogglePauseMenu;
+            @TogglePauseMenu.performed += instance.OnTogglePauseMenu;
+            @TogglePauseMenu.canceled += instance.OnTogglePauseMenu;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @TogglePauseMenu.started -= instance.OnTogglePauseMenu;
+            @TogglePauseMenu.performed -= instance.OnTogglePauseMenu;
+            @TogglePauseMenu.canceled -= instance.OnTogglePauseMenu;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -318,5 +395,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnAddYellowIngredient(InputAction.CallbackContext context);
         void OnAddRedIngredient(InputAction.CallbackContext context);
         void OnLaunchMixture(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnTogglePauseMenu(InputAction.CallbackContext context);
     }
 }

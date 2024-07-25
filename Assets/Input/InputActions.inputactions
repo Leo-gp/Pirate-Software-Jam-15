@@ -132,6 +132,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "28165a80-e0ef-460f-bad7-28ae87248ec5",
+            "actions": [
+                {
+                    "name": "Toggle Pause Menu",
+                    "type": "Button",
+                    "id": "9990cadf-3f4f-4695-a99a-49775d890156",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "101e5fa6-2958-42df-9a3a-706194f2e3a5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Toggle Pause Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
