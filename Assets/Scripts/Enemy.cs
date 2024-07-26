@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private List<Mixture> _totalVulnerabilities;
     private List<Mixture> _remainingVulnerabilities;
 
-    public Action Died { get; set; }
+    public Action<Enemy> Died { get; set; }
 
     public void Initialize(float timeToReachPlayer, List<Mixture> vulnerabilities)
     {
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
     {
         Tween.StopAll(transform);
         gameObject.SetActive(false);
-        Died?.Invoke();
+        Died?.Invoke(this);
     }
 
     private void InitializeVulnerabilities(List<Mixture> vulnerabilities)

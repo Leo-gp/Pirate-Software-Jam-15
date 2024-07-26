@@ -75,7 +75,7 @@ public class WavesManager : MonoBehaviour
         _lastSpawnedEnemy.Died += OnLastEnemyDefeated;
     }
 
-    private void OnLastEnemyDefeated()
+    private void OnLastEnemyDefeated(Enemy enemy)
     {
         gameOverManager.GameOverWin();
     }
