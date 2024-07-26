@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using PrimeTween;
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
     private float _timeToReachPlayer;
     private List<Mixture> _totalVulnerabilities;
     private List<Mixture> _remainingVulnerabilities;
+
+    public Action Died { get; set; }
 
     public void Initialize(float timeToReachPlayer, List<Mixture> vulnerabilities)
     {
@@ -53,6 +56,7 @@ public class Enemy : MonoBehaviour
     {
         Tween.StopAll(transform);
         gameObject.SetActive(false);
+        Died?.Invoke();
     }
 
     private void InitializeVulnerabilities(List<Mixture> vulnerabilities)

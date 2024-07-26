@@ -7,8 +7,11 @@ public class WavesManager : MonoBehaviour
 {
     private const int MaxEnemyUniqueVulnerabilities = 6;
 
+    [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private WaveConfiguration[] wavesConfigurations;
+
+    private Enemy _lastSpawnedEnemy;
 
     public WaveConfiguration CurrentWave { get; private set; }
 
@@ -18,6 +21,14 @@ public class WavesManager : MonoBehaviour
     {
         ValidateWavesConfigurations();
         StartNextWave();
+    }
+
+    private void OnDisable()
+    {
+        if (_lastSpawnedEnemy is not null)
+        {
+            _lastSpawnedEnemy.Died -= OnLastEnemyDefeated;
+        }
     }
 
     private void StartNextWave()
@@ -32,6 +43,7 @@ public class WavesManager : MonoBehaviour
             }
             else
             {
+                OnWavesFinished();
                 return;
             }
         }
@@ -48,7 +60,7 @@ public class WavesManager : MonoBehaviour
             yield return new WaitForSeconds(subWave.DelayBeforeStart);
             for (var i = 0; i < subWave.EnemiesAmount; i++)
             {
-                enemySpawner.Spawn();
+                _lastSpawnedEnemy = enemySpawner.Spawn();
                 if (i < subWave.EnemiesAmount - 1)
                 {
                     yield return new WaitForSeconds(subWave.SpawnDelay);
@@ -56,6 +68,16 @@ public class WavesManager : MonoBehaviour
             }
         }
         StartNextWave();
+    }
+
+    private void OnWavesFinished()
+    {
+        _lastSpawnedEnemy.Died += OnLastEnemyDefeated;
+    }
+
+    private void OnLastEnemyDefeated()
+    {
+        gameOverManager.GameOverWin();
     }
 
     private void ValidateWavesConfigurations()

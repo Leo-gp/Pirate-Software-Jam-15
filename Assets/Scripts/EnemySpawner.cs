@@ -5,10 +5,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private EnemyFactory enemyFactory;
     [SerializeField] private Transform spawnPosition;
 
-    public void Spawn()
+    public Enemy Spawn()
     {
         var enemy = enemyFactory.CreateEnemy();
         enemy.transform.position = spawnPosition.position;
         enemy.ApproachPlayer();
+        return enemy;
     }
 }

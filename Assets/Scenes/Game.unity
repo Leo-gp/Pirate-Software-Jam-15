@@ -1614,6 +1614,10 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1110261506}
+    - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
+      propertyPath: gameOverManager
+      value: 
+      objectReference: {fileID: 1841485099}
     - target: {fileID: 5088145618121973570, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
