@@ -10,4 +10,18 @@ public class SceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(activeScene.buildIndex);
         Time.timeScale = 1;
     }
+
+    public void LoadScene(string sceneName)
+    {
+        Tween.StopAll();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1;
+    }
+
+    public void Quit()
+    {
+        Tween.StopAll();
+        Application.Quit();
+        Time.timeScale = 1;
+    }
 }
