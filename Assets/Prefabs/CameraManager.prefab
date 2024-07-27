@@ -63,7 +63,7 @@ MonoBehaviour:
       cycleMode: 1
       startDelay: 0
       endDelay: 0
-      useUnscaledTime: 0
+      useUnscaledTime: 1
       useFixedUpdate: 0
 --- !u!1 &5541904819771468005
 GameObject:

@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
         Tween.StopAll(transform);
         gameObject.SetActive(false);
         Died?.Invoke(this);
+        Died = null;
     }
 
     private void InitializeVulnerabilities(List<Mixture> vulnerabilities)

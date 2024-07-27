@@ -36,7 +36,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnEnemyDied(Enemy enemy)
     {
-        enemy.Died -= OnEnemyDied;
         RemoveEnemyFromSpawnPositionDict(enemy);
     }
 

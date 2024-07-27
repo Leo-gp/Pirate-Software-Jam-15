@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,26 +9,33 @@ public class WavesManager : MonoBehaviour
     private const int MaxEnemyUniqueVulnerabilities = 6;
 
     [SerializeField] private GameOverManager gameOverManager;
+    [SerializeField] private PlayerManager playerManager;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private WaveConfiguration[] wavesConfigurations;
 
-    private Enemy _lastSpawnedEnemy;
+    private readonly Dictionary<SubWave, List<Enemy>> _remainingSubWaveEnemiesDict = new();
 
-    public WaveConfiguration CurrentWave { get; private set; }
+    private bool _allCurrentWaveEnemiesSpawned;
 
-    public WaveConfiguration.SubWave CurrentSubWave { get; private set; }
+    public static WaveConfiguration CurrentWave { get; private set; }
+
+    public static SubWave CurrentSubWave { get; private set; }
+
+    private bool IsLastWave => CurrentWave == wavesConfigurations[^1];
+
+    private bool CurrentWaveEnemiesDefeated => _allCurrentWaveEnemiesSpawned &&
+                                               _remainingSubWaveEnemiesDict.Values.All(enemies => enemies.Count is 0);
 
     private void Start()
     {
         ValidateWavesConfigurations();
-        StartNextWave();
-    }
-
-    private void OnDisable()
-    {
-        if (_lastSpawnedEnemy is not null)
+        if (CurrentWave is not null)
         {
-            _lastSpawnedEnemy.Died -= OnLastEnemyDefeated;
+            StartCoroutine(StartWave(CurrentWave));
+        }
+        else
+        {
+            StartNextWave();
         }
     }
 
@@ -43,7 +51,6 @@ public class WavesManager : MonoBehaviour
             }
             else
             {
-                OnWavesFinished();
                 return;
             }
         }
@@ -53,31 +60,48 @@ public class WavesManager : MonoBehaviour
     private IEnumerator StartWave(WaveConfiguration waveConfiguration)
     {
         CurrentWave = waveConfiguration;
+        _allCurrentWaveEnemiesSpawned = false;
         yield return new WaitForSeconds(waveConfiguration.DelayBeforeWaveStarts);
-        foreach (var subWave in waveConfiguration.SubWaves)
+        foreach (var subWaveConfig in waveConfiguration.SubWavesConfigurations)
         {
-            CurrentSubWave = subWave;
-            yield return new WaitForSeconds(subWave.DelayBeforeStart);
-            for (var i = 0; i < subWave.EnemiesAmount; i++)
+            CurrentSubWave = new SubWave(subWaveConfig);
+            _remainingSubWaveEnemiesDict.Add(CurrentSubWave, new List<Enemy>());
+            yield return new WaitForSeconds(subWaveConfig.DelayBeforeStart);
+            for (var i = 0; i < subWaveConfig.EnemiesAmount; i++)
             {
-                _lastSpawnedEnemy = enemySpawner.Spawn();
-                if (i < subWave.EnemiesAmount - 1)
+                var enemy = enemySpawner.Spawn();
+                _remainingSubWaveEnemiesDict[CurrentSubWave].Add(enemy);
+                enemy.Died += OnEnemyDefeated;
+                if (i < subWaveConfig.EnemiesAmount - 1)
                 {
-                    yield return new WaitForSeconds(subWave.SpawnDelay);
+                    yield return new WaitForSeconds(subWaveConfig.SpawnDelay);
                 }
             }
         }
-        StartNextWave();
+        _allCurrentWaveEnemiesSpawned = true;
     }
 
-    private void OnWavesFinished()
+    private void OnEnemyDefeated(Enemy enemy)
     {
-        _lastSpawnedEnemy.Died += OnLastEnemyDefeated;
-    }
-
-    private void OnLastEnemyDefeated(Enemy enemy)
-    {
-        gameOverManager.GameOverWin();
+        var subWave = _remainingSubWaveEnemiesDict.First(pair => pair.Value.Contains(enemy)).Key;
+        _remainingSubWaveEnemiesDict[subWave].Remove(enemy);
+        if (!CurrentWaveEnemiesDefeated)
+        {
+            return;
+        }
+        _remainingSubWaveEnemiesDict.Clear();
+        if (playerManager.CurrentLives <= 0)
+        {
+            return;
+        }
+        if (IsLastWave)
+        {
+            gameOverManager.GameOverWin();
+        }
+        else
+        {
+            StartNextWave();
+        }
     }
 
     private void ValidateWavesConfigurations()
@@ -91,9 +115,9 @@ public class WavesManager : MonoBehaviour
                     $"Enemies time to reach player must be greater than zero at {waveConfiguration.name}"
                 );
             }
-            for (var i = 0; i < waveConfiguration.SubWaves.Length; i++)
+            for (var i = 0; i < waveConfiguration.SubWavesConfigurations.Length; i++)
             {
-                var subWave = waveConfiguration.SubWaves[i];
+                var subWave = waveConfiguration.SubWavesConfigurations[i];
                 var simpleAmount = subWave.Vulnerabilities.UniqueSimpleAmount;
                 var complexAmount = subWave.Vulnerabilities.UniqueComplexAmount;
                 if (simpleAmount < 0 || complexAmount < 0)

@@ -1553,21 +1553,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1110261506}
     - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 137540192}
+    - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
+      propertyPath: enemiesManager
+      value: 
+      objectReference: {fileID: 4695683345900478955}
+    - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 1841485099}
-    - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
-      propertyPath: wavesConfigurations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
-      propertyPath: wavesConfigurations.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: a01f89cb1b8a2244c8bb0ba4a89dfdb9, type: 2}
-    - target: {fileID: 4902810239520872111, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
-      propertyPath: wavesConfigurations.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2620c86db4a599d4d9fa1501b9d32496, type: 2}
     - target: {fileID: 5088145618121973570, guid: c6289ac750f672a409c90d87e1c3be28, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

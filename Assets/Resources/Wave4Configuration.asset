@@ -10,19 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f892e2ddeb764cfca4e6e3fe815e03be, type: 3}
-  m_Name: Wave2Configuration
+  m_Name: Wave4Configuration
   m_EditorClassIdentifier: 
   delayBeforeWaveStarts: 4
-  enemiesTimeToReachPlayer: 6
+  enemiesTimeToReachPlayer: 5.5
   subWaves:
   - delayBeforeStart: 2
     enemiesAmount: 1
     spawnDelay: 2
     vulnerabilities:
-      uniqueSimpleAmount: 1
+      uniqueSimpleAmount: 0
+      uniqueComplexAmount: 1
+  - delayBeforeStart: 2
+    enemiesAmount: 1
+    spawnDelay: 2
+    vulnerabilities:
+      uniqueSimpleAmount: 2
       uniqueComplexAmount: 0
   - delayBeforeStart: 2
-    enemiesAmount: 3
+    enemiesAmount: 2
+    spawnDelay: 2
+    vulnerabilities:
+      uniqueSimpleAmount: 0
+      uniqueComplexAmount: 1
+  - delayBeforeStart: 2
+    enemiesAmount: 1
     spawnDelay: 2
     vulnerabilities:
       uniqueSimpleAmount: 2
@@ -31,10 +43,10 @@ MonoBehaviour:
     enemiesAmount: 1
     spawnDelay: 2
     vulnerabilities:
-      uniqueSimpleAmount: 1
-      uniqueComplexAmount: 0
+      uniqueSimpleAmount: 0
+      uniqueComplexAmount: 1
   - delayBeforeStart: 2
-    enemiesAmount: 2
+    enemiesAmount: 1
     spawnDelay: 2
     vulnerabilities:
       uniqueSimpleAmount: 2
@@ -43,11 +55,17 @@ MonoBehaviour:
     enemiesAmount: 1
     spawnDelay: 2
     vulnerabilities:
-      uniqueSimpleAmount: 1
-      uniqueComplexAmount: 0
+      uniqueSimpleAmount: 0
+      uniqueComplexAmount: 1
   - delayBeforeStart: 2
-    enemiesAmount: 2
+    enemiesAmount: 1
     spawnDelay: 2
     vulnerabilities:
-      uniqueSimpleAmount: 2
+      uniqueSimpleAmount: 3
       uniqueComplexAmount: 0
+  - delayBeforeStart: 2
+    enemiesAmount: 1
+    spawnDelay: 2
+    vulnerabilities:
+      uniqueSimpleAmount: 0
+      uniqueComplexAmount: 1

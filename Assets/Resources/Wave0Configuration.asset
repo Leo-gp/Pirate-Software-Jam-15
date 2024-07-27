@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f892e2ddeb764cfca4e6e3fe815e03be, type: 3}
-  m_Name: Wave1Configuration
+  m_Name: Wave0Configuration
   m_EditorClassIdentifier: 
-  delayBeforeWaveStarts: 4
-  enemiesTimeToReachPlayer: 6
+  delayBeforeWaveStarts: 2
+  enemiesTimeToReachPlayer: 10
   subWaves:
   - delayBeforeStart: 2
-    enemiesAmount: 5
+    enemiesAmount: 3
     spawnDelay: 2
     vulnerabilities:
       uniqueSimpleAmount: 1

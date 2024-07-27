@@ -9,13 +9,12 @@ public class EnemyFactory : MonoBehaviour
 
     [SerializeField] private EnemiesManager enemiesManager;
     [SerializeField] private MixturesManager mixturesManager;
-    [SerializeField] private WavesManager wavesManager;
 
     public Enemy CreateEnemy()
     {
         var enemy = GetEnemyFromPool();
         enemy.gameObject.SetActive(true);
-        enemy.Initialize(wavesManager.CurrentWave.EnemiesTimeToReachPlayer, CreateVulnerabilities());
+        enemy.Initialize(WavesManager.CurrentWave.EnemiesTimeToReachPlayer, CreateVulnerabilities());
         return enemy;
     }
 
@@ -27,7 +26,7 @@ public class EnemyFactory : MonoBehaviour
     private List<Mixture> CreateVulnerabilities()
     {
         var mixtures = new List<Mixture>();
-        var vulnerabilities = wavesManager.CurrentSubWave.Vulnerabilities;
+        var vulnerabilities = WavesManager.CurrentSubWave.Config.Vulnerabilities;
         var totalUniqueVulnerabilities = vulnerabilities.UniqueSimpleAmount + vulnerabilities.UniqueComplexAmount;
         var vulnerabilitiesRepeatAmount = VulnerabilitiesAmount / totalUniqueVulnerabilities;
         for (var i = 0; i < vulnerabilities.UniqueSimpleAmount; i++)

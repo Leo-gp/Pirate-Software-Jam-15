@@ -6,16 +6,16 @@ public class WaveConfiguration : ScriptableObject
 {
     [SerializeField] private float delayBeforeWaveStarts;
     [SerializeField] private float enemiesTimeToReachPlayer;
-    [SerializeField] private SubWave[] subWaves;
+    [SerializeField] private SubWaveConfiguration[] subWaves;
 
     public float DelayBeforeWaveStarts => delayBeforeWaveStarts;
 
     public float EnemiesTimeToReachPlayer => enemiesTimeToReachPlayer;
 
-    public SubWave[] SubWaves => subWaves;
+    public SubWaveConfiguration[] SubWavesConfigurations => subWaves;
 
     [Serializable]
-    public struct SubWave
+    public struct SubWaveConfiguration
     {
         [SerializeField] private float delayBeforeStart;
         [SerializeField] private int enemiesAmount;

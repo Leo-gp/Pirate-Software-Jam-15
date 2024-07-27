@@ -7,20 +7,20 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform playerPosition;
     [SerializeField] private int lives;
 
-    private int _currentLives;
+    public int CurrentLives { get; private set; }
 
     public Transform PlayerPosition => playerPosition;
 
     private void Start()
     {
-        _currentLives = lives;
+        CurrentLives = lives;
     }
 
     public void Hit()
     {
         cameraManager.RedFlash();
-        _currentLives--;
-        if (_currentLives <= 0)
+        CurrentLives--;
+        if (CurrentLives <= 0)
         {
             gameOverManager.GameOverLoss();
         }

@@ -47,5 +47,15 @@ MonoBehaviour:
   gameOverManager: {fileID: 0}
   enemySpawner: {fileID: 0}
   wavesConfigurations:
+  - {fileID: 11400000, guid: f0cb4bdbbd8d52b4a8f769b349e8bd7b, type: 2}
   - {fileID: 11400000, guid: a01f89cb1b8a2244c8bb0ba4a89dfdb9, type: 2}
-  - {fileID: 11400000, guid: 2620c86db4a599d4d9fa1501b9d32496, type: 2}
+  - {fileID: 11400000, guid: 24e1c5148090ff54a8f208a5e944ec4c, type: 2}
+  - {fileID: 11400000, guid: a7a375fb1740a5444a3f9006740dbbdd, type: 2}
+  - {fileID: 11400000, guid: cce240f3d6070de49a154f014e7fe77a, type: 2}
+  - {fileID: 11400000, guid: 967b9de1944a41949b9b7a2dfe91780c, type: 2}
+  - {fileID: 11400000, guid: 9b3dfc3e1efc1714f975973712bca829, type: 2}
+  - {fileID: 11400000, guid: 87dfc7fedeedd984da32005235817b0e, type: 2}
+  - {fileID: 11400000, guid: 35d37fbd80e4ecd43b00d3013ec6546d, type: 2}
+  - {fileID: 11400000, guid: 8c7259387b11d0942ba8c533cb6872a7, type: 2}
+  - {fileID: 11400000, guid: c0df84ffab142e44fb1c0c9f7c2dc48b, type: 2}
+  - {fileID: 11400000, guid: d238b914b5eff0e4787f02ad6dab535f, type: 2}
