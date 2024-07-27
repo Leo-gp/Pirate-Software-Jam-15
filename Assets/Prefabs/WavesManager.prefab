@@ -45,7 +45,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverManager: {fileID: 0}
+  playerManager: {fileID: 0}
   enemySpawner: {fileID: 0}
+  waveStartedText: {fileID: 0}
+  waveStartedTextAlphaTweenSettings:
+    startFromCurrent: 0
+    startValue: 0
+    endValue: 1
+    settings:
+      duration: 0.75
+      ease: 0
+      customEase:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      cycles: 2
+      cycleMode: 1
+      startDelay: 0
+      endDelay: 2.5
+      useUnscaledTime: 0
+      useFixedUpdate: 0
   wavesConfigurations:
   - {fileID: 11400000, guid: f0cb4bdbbd8d52b4a8f769b349e8bd7b, type: 2}
   - {fileID: 11400000, guid: a01f89cb1b8a2244c8bb0ba4a89dfdb9, type: 2}

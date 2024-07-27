@@ -24,4 +24,9 @@ public class SceneManager : MonoBehaviour
         Application.Quit();
         Time.timeScale = 1;
     }
+
+    public void SetCurrentWave(WaveConfiguration waveConfiguration)
+    {
+        WavesManager.SetCurrentWave(waveConfiguration);
+    }
 }

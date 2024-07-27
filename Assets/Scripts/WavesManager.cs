@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using PrimeTween;
+using TMPro;
 using UnityEngine;
 
 public class WavesManager : MonoBehaviour
@@ -11,6 +13,8 @@ public class WavesManager : MonoBehaviour
     [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private TextMeshProUGUI waveStartedText;
+    [SerializeField] private TweenSettings<float> waveStartedTextAlphaTweenSettings;
     [SerializeField] private WaveConfiguration[] wavesConfigurations;
 
     private readonly Dictionary<SubWave, List<Enemy>> _remainingSubWaveEnemiesDict = new();
@@ -39,6 +43,11 @@ public class WavesManager : MonoBehaviour
         }
     }
 
+    public static void SetCurrentWave(WaveConfiguration waveConfiguration)
+    {
+        CurrentWave = waveConfiguration;
+    }
+
     private void StartNextWave()
     {
         var nextWaveIndex = 0;
@@ -62,6 +71,7 @@ public class WavesManager : MonoBehaviour
         CurrentWave = waveConfiguration;
         _allCurrentWaveEnemiesSpawned = false;
         yield return new WaitForSeconds(waveConfiguration.DelayBeforeWaveStarts);
+        DisplayWaveStartedText();
         foreach (var subWaveConfig in waveConfiguration.SubWavesConfigurations)
         {
             CurrentSubWave = new SubWave(subWaveConfig);
@@ -79,6 +89,13 @@ public class WavesManager : MonoBehaviour
             }
         }
         _allCurrentWaveEnemiesSpawned = true;
+    }
+
+    private void DisplayWaveStartedText()
+    {
+        var waveIndex = wavesConfigurations.ToList().IndexOf(CurrentWave);
+        waveStartedText.SetText($"Wave {waveIndex + 1} incoming!");
+        Tween.Alpha(waveStartedText, waveStartedTextAlphaTweenSettings);
     }
 
     private void OnEnemyDefeated(Enemy enemy)

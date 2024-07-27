@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f892e2ddeb764cfca4e6e3fe815e03be, type: 3}
   m_Name: Wave0Configuration
   m_EditorClassIdentifier: 
-  delayBeforeWaveStarts: 2
+  delayBeforeWaveStarts: 1
   enemiesTimeToReachPlayer: 10
   subWaves:
-  - delayBeforeStart: 2
+  - delayBeforeStart: 4
     enemiesAmount: 3
     spawnDelay: 2
     vulnerabilities:
