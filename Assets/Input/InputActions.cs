@@ -152,6 +152,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Launch Mixture"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2804caa3-b4ea-46a4-9cf0-484b656fcdfb"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Launch Mixture"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12d73efc-cca0-4e2f-841a-6c22818c25ab"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Launch Mixture"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -167,15 +189,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Submit"",
-                    ""type"": ""Button"",
-                    ""id"": ""e29340ba-7cca-4e86-b10b-87b7d96f0bcd"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -187,17 +200,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Toggle Pause Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""de2f4fa0-0e8f-4db5-aa61-9fab8513dabe"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -227,7 +229,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_TogglePauseMenu = m_UI.FindAction("Toggle Pause Menu", throwIfNotFound: true);
-        m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -360,13 +361,11 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_TogglePauseMenu;
-    private readonly InputAction m_UI_Submit;
     public struct UIActions
     {
         private @InputActions m_Wrapper;
         public UIActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @TogglePauseMenu => m_Wrapper.m_UI_TogglePauseMenu;
-        public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -379,9 +378,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @TogglePauseMenu.started += instance.OnTogglePauseMenu;
             @TogglePauseMenu.performed += instance.OnTogglePauseMenu;
             @TogglePauseMenu.canceled += instance.OnTogglePauseMenu;
-            @Submit.started += instance.OnSubmit;
-            @Submit.performed += instance.OnSubmit;
-            @Submit.canceled += instance.OnSubmit;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -389,9 +385,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @TogglePauseMenu.started -= instance.OnTogglePauseMenu;
             @TogglePauseMenu.performed -= instance.OnTogglePauseMenu;
             @TogglePauseMenu.canceled -= instance.OnTogglePauseMenu;
-            @Submit.started -= instance.OnSubmit;
-            @Submit.performed -= instance.OnSubmit;
-            @Submit.canceled -= instance.OnSubmit;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -428,6 +421,5 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnTogglePauseMenu(InputAction.CallbackContext context);
-        void OnSubmit(InputAction.CallbackContext context);
     }
 }

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientOnTableSprite: {fileID: 4548693871161752468}
   ingredientOnCauldronSprite: {fileID: 6505267209199843832}
+  audioClip: {fileID: 8300000, guid: 0472e7f8cdec6ee409dedba0b4ff29e1, type: 3}
 --- !u!1 &6987824374970640087
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   enemySpawner: {fileID: 0}
   waveStartedText: {fileID: 0}
+  waveStartedSound: {fileID: 8300000, guid: 9d33594ecb8afa4489f891ea601e956e, type: 3}
   waveStartedTextAlphaTweenSettings:
     startFromCurrent: 0
     startValue: 0

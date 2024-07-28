@@ -47,4 +47,5 @@ MonoBehaviour:
   cameraManager: {fileID: 0}
   gameOverManager: {fileID: 0}
   playerPosition: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 97da48e647847884caaaace790a3e3c4, type: 3}
   lives: 1

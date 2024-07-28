@@ -6,6 +6,7 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private MixturesManager mixturesManager;
     [SerializeField] private EnemiesManager enemiesManager;
     [SerializeField] private SpriteRenderer mixtureSprite;
+    [SerializeField] private AudioClip attackSound;
 
     private readonly List<Ingredient> _ingredients = new();
 
@@ -29,6 +30,7 @@ public class Cauldron : MonoBehaviour
         {
             enemy.Hit(_mixture);
         }
+        AudioManager.Instance.AudioSource.PlayOneShot(attackSound);
         Clear();
     }
 
@@ -40,6 +42,7 @@ public class Cauldron : MonoBehaviour
             var ingredientBeforeLast = _ingredients[^2];
             if (ingredientBeforeLast == lastIngredient)
             {
+                lastIngredient.PutOnCauldron();
                 return;
             }
             ingredientBeforeLast.PutOnTable();

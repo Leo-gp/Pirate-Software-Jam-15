@@ -14,6 +14,7 @@ public class WavesManager : MonoBehaviour
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private TextMeshProUGUI waveStartedText;
+    [SerializeField] private AudioClip waveStartedSound;
     [SerializeField] private TweenSettings<float> waveStartedTextAlphaTweenSettings;
     [SerializeField] private WaveConfiguration[] wavesConfigurations;
 
@@ -96,6 +97,7 @@ public class WavesManager : MonoBehaviour
         var waveIndex = wavesConfigurations.ToList().IndexOf(CurrentWave);
         waveStartedText.SetText($"Wave {waveIndex + 1} incoming!");
         Tween.Alpha(waveStartedText, waveStartedTextAlphaTweenSettings);
+        AudioManager.Instance.AudioSource.PlayOneShot(waveStartedSound);
     }
 
     private void OnEnemyDefeated(Enemy enemy)

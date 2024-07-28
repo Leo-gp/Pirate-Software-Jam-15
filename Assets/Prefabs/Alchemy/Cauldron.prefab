@@ -49,6 +49,7 @@ MonoBehaviour:
   mixturesManager: {fileID: 0}
   enemiesManager: {fileID: 0}
   mixtureSprite: {fileID: 3711381465907667024}
+  attackSound: {fileID: 8300000, guid: cd15c8a4a692a9b4dafbf7f9ae7b20b0, type: 3}
 --- !u!212 &496503207334622475
 SpriteRenderer:
   m_ObjectHideFlags: 0

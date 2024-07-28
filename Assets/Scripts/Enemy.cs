@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip deathAnimationClip;
+    [SerializeField] private AudioClip deathSound;
     [SerializeField] private SpriteRenderer bodySpriteRenderer;
     [SerializeField] private GameObject umbrellaGameObject;
     [SerializeField] private float fadeOutOnDeathTime;
@@ -82,6 +83,7 @@ public class Enemy : MonoBehaviour
         {
             yield break;
         }
+        AudioManager.Instance.AudioSource.PlayOneShot(deathSound);
         umbrellaGameObject.SetActive(false);
         animator.SetTrigger(DieAnimationTrigger);
         yield return new WaitForSeconds(deathAnimationClip.length);

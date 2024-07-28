@@ -277,6 +277,8 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   animator: {fileID: 8294283513651559054}
   deathAnimationClip: {fileID: 7400000, guid: 011c3f9f8e089c440a2edf79f8d9d8c2, type: 2}
+  deathSound: {fileID: 8300000, guid: b9e4c69e27937494aaf874c3937164ea, type: 3}
+  umbrellaHitSound: {fileID: 8300000, guid: f10dd7051b3df5b47b0fc9a395cf6d84, type: 3}
   bodySpriteRenderer: {fileID: 9019467383299478174}
   umbrellaGameObject: {fileID: 630227684943229754}
   fadeOutOnDeathTime: 0.5

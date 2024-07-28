@@ -216,3 +216,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientOnTableSprite: {fileID: 5872180464839598541}
   ingredientOnCauldronSprite: {fileID: 4725077348020861237}
+  audioClip: {fileID: 8300000, guid: 0a4663b2bd2c85942a88a09d2a113fe7, type: 3}
