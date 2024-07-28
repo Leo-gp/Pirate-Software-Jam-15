@@ -406,6 +406,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6400577665620753323, guid: 23e53e9740eebe3488ef123fe4cc02df, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400577665620753323, guid: 23e53e9740eebe3488ef123fe4cc02df, type: 3}
+      propertyPath: m_Navigation.m_WrapAround
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400577665620753323, guid: 23e53e9740eebe3488ef123fe4cc02df, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

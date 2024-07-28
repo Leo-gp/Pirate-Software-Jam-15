@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, InputActions.IPlayerActions, InputActions.IUIActions
@@ -61,6 +62,23 @@ public class PlayerController : MonoBehaviour, InputActions.IPlayerActions, Inpu
         if (context.performed)
         {
             pauseManager.TogglePauseMenu();
+        }
+    }
+
+    public void OnSubmit(InputAction.CallbackContext context)
+    {
+        if (_inputActions.Player.enabled)
+        {
+            return;
+        }
+        if (context.performed)
+        {
+            ExecuteEvents.Execute
+            (
+                EventSystem.current.currentSelectedGameObject,
+                new PointerEventData(EventSystem.current),
+                ExecuteEvents.submitHandler
+            );
         }
     }
 

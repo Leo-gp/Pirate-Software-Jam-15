@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private GameOverManager gameOverManager;
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private Button firstSelectedButton;
 
     private bool _isPaused;
 
@@ -16,12 +19,12 @@ public class PauseManager : MonoBehaviour
         }
         if (!_isPaused)
         {
-            pauseMenu.SetActive(true);
+            pauseScreen.SetActive(true);
             Pause();
         }
         else
         {
-            pauseMenu.SetActive(false);
+            pauseScreen.SetActive(false);
             Unpause();
         }
     }
@@ -30,6 +33,7 @@ public class PauseManager : MonoBehaviour
     {
         _isPaused = true;
         playerController.DisablePlayerInput();
+        EventSystem.current.SetSelectedGameObject(firstSelectedButton.gameObject);
         Time.timeScale = 0;
     }
 

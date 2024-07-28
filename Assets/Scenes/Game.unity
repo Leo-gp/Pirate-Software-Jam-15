@@ -139,6 +139,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4219582877449872467, guid: f78f61cf39039464ca16e003ccca3435, type: 3}
   m_PrefabInstance: {fileID: 4895545956886603232}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &428988546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5921728379367413744, guid: 245c277076293c744b9100c4c993c525, type: 3}
+  m_PrefabInstance: {fileID: 7017814746363350479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &478363758 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1575105534331889339, guid: e87f5b2cf3627d040bb3f3a760506c41, type: 3}
@@ -148,6 +159,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2411a63d4a2845a2866c7a1f654c5442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &517578914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9185882249529087239, guid: b993f5ea0279e3447b89971822a9c211, type: 3}
+  m_PrefabInstance: {fileID: 1692207401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &576432889 stripped
@@ -579,6 +601,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6e7ad90991b7474cbc2e7e621b7ebad, type: 3}
+--- !u!114 &2122267745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3923293146690744261, guid: f78f61cf39039464ca16e003ccca3435, type: 3}
+  m_PrefabInstance: {fileID: 4895545956886603232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2126366156 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8145450156716155079, guid: 6798f0b8c02c65343a245990990c4b67, type: 3}
@@ -1362,6 +1395,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 910739247}
     - target: {fileID: 8145450156716155079, guid: 6798f0b8c02c65343a245990990c4b67, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 910739247}
+    - target: {fileID: 8145450156716155079, guid: 6798f0b8c02c65343a245990990c4b67, type: 3}
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 1841485099}
@@ -1369,6 +1406,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 641544302}
+    - target: {fileID: 8145450156716155079, guid: 6798f0b8c02c65343a245990990c4b67, type: 3}
+      propertyPath: firstSelectedButton
+      value: 
+      objectReference: {fileID: 428988546}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1992,6 +2033,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6600961746931822073, guid: 49f832462d7b672478cc1c389dad0908, type: 3}
+      propertyPath: m_CancelAction
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2190,6 +2235,14 @@ PrefabInstance:
       propertyPath: gameOverScreenTitle
       value: 
       objectReference: {fileID: 1884195621}
+    - target: {fileID: 8258681206406523294, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
+      propertyPath: gameOverWinFirstSelectedButton
+      value: 
+      objectReference: {fileID: 517578914}
+    - target: {fileID: 8258681206406523294, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
+      propertyPath: gameOverLossFirstSelectedButton
+      value: 
+      objectReference: {fileID: 2122267745}
     - target: {fileID: 9199703970529061096, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
       propertyPath: m_Name
       value: GameOverManager
