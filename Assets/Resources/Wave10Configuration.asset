@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wave10Configuration
   m_EditorClassIdentifier: 
   delayBeforeWaveStarts: 1
-  enemiesTimeToReachPlayer: 4.25
+  enemiesTimeToReachPlayer: 4.5
   subWaves:
-  - delayBeforeStart: 4
+  - delayBeforeStart: 3
     enemiesAmount: 1
     spawnDelay: 2.5
     vulnerabilities:
@@ -64,7 +64,13 @@ MonoBehaviour:
       uniqueSimpleAmount: 2
       uniqueComplexAmount: 1
   - delayBeforeStart: 2.5
-    enemiesAmount: 2
+    enemiesAmount: 1
+    spawnDelay: 2.5
+    vulnerabilities:
+      uniqueSimpleAmount: 1
+      uniqueComplexAmount: 2
+  - delayBeforeStart: 2.5
+    enemiesAmount: 1
     spawnDelay: 2.5
     vulnerabilities:
       uniqueSimpleAmount: 3

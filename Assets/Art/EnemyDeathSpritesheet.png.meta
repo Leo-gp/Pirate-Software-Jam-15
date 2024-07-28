@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0313d36b708d16458de788343443e51
+guid: 2af127809ad27164786c74a05c2ad871
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -110,55 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cauldron
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 539
-        width: 496
-        height: 321
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78804aae68bb2d846af9b9697a3eae66
-      internalID: -1967869772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mixture
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 914
-        width: 381
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bd370c2e90511d41b5a4122e54d5341
-      internalID: -742533024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Table
+      name: EnemyDeath_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1556
-        height: 262
+        y: 20
+        width: 660
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6d7a3f39c8315c4eb8190571ed17679
-      internalID: 1521997628
+      spriteID: 806dafe680e1d7b4398a972f9b9227a8
+      internalID: -472781842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedIngredient
+      name: EnemyDeath_1
       rect:
         serializedVersion: 2
-        x: 578
-        y: 296
-        width: 352
-        height: 159
+        x: 660
+        y: 20
+        width: 660
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b45c5b975d38f644491de95b2dd3a1da
-      internalID: -815843236
+      spriteID: ecb03cd10c9bebb4d9fd36e7168f0bd2
+      internalID: 975984294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowIngredient
+      name: EnemyDeath_2
       rect:
         serializedVersion: 2
-        x: 962
-        y: 329
-        width: 370
-        height: 168
+        x: 1320
+        y: 20
+        width: 660
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd736c6a8ea3e504784701d91e1c4eec
-      internalID: -1589384323
+      spriteID: 9fd6af6d59cdf4e47a22ced54306f612
+      internalID: 1884580831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueIngredient
+      name: EnemyDeath_3
       rect:
         serializedVersion: 2
-        x: 1574
-        y: 331
-        width: 297
-        height: 360
+        x: 1980
+        y: 20
+        width: 660
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,71 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc8da8e300160e44ac5c9827171cfe3
-      internalID: 1085589016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedIngredientCauldron
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 848
-        width: 342
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 689f9aedd14788e4fb3a436d26b89b74
-      internalID: -1190630006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: YellowIngredientCauldron
-      rect:
-        serializedVersion: 2
-        x: 1038
-        y: 890
-        width: 223
-        height: 158
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11cacf588772fe242938783df97030e3
-      internalID: 1189932616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueIngredientCauldron
-      rect:
-        serializedVersion: 2
-        x: 1346
-        y: 884
-        width: 196
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: accfd29a878009d48bb73acc8ebd1646
-      internalID: -969061334
+      spriteID: e9f4c1a122204a9468088c0d4d32ef63
+      internalID: -501483522
       vertices: []
       indices: 
       edges: []
@@ -309,15 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BlueIngredient: 1085589016
-      BlueIngredientCauldron: -969061334
-      Cauldron: -1967869772
-      Mixture: -742533024
-      RedIngredient: -815843236
-      RedIngredientCauldron: -1190630006
-      Table: 1521997628
-      YellowIngredient: -1589384323
-      YellowIngredientCauldron: 1189932616
+      EnemyDeath_0: -472781842
+      EnemyDeath_1: 975984294
+      EnemyDeath_2: 1884580831
+      EnemyDeath_3: -501483522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

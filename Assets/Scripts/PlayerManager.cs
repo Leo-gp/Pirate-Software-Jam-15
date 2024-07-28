@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     public Transform PlayerPosition => playerPosition;
 
+    public bool IsDead => CurrentLives <= 0;
+
     private void Start()
     {
         CurrentLives = lives;
@@ -20,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     {
         cameraManager.RedFlash();
         CurrentLives--;
-        if (CurrentLives <= 0)
+        if (IsDead)
         {
             gameOverManager.GameOverLoss();
         }

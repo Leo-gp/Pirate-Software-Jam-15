@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f0313d36b708d16458de788343443e51
+guid: 78b1f7474151cb84f8c94fb175550f24
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cauldron
+      name: EnemyWalk_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 539
-        width: 496
-        height: 321
+        x: 35
+        y: 45
+        width: 600
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78804aae68bb2d846af9b9697a3eae66
-      internalID: -1967869772
+      spriteID: 1393fd5cd2d82e44193a1328ba842d7f
+      internalID: -1731636954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mixture
+      name: EnemyWalk_1
       rect:
         serializedVersion: 2
-        x: 93
-        y: 914
-        width: 381
-        height: 122
+        x: 690
+        y: 45
+        width: 600
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bd370c2e90511d41b5a4122e54d5341
-      internalID: -742533024
+      spriteID: 2d523cdb58b49a243a900097f2fc8e43
+      internalID: 760386671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Table
+      name: EnemyWalk_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1556
-        height: 262
+        x: 1345
+        y: 48
+        width: 600
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6d7a3f39c8315c4eb8190571ed17679
-      internalID: 1521997628
+      spriteID: 026e2ad7b95b9394c9249b9943653396
+      internalID: 1397327155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedIngredient
+      name: EnemyWalk_3
       rect:
         serializedVersion: 2
-        x: 578
-        y: 296
-        width: 352
-        height: 159
+        x: 2000
+        y: 45
+        width: 600
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b45c5b975d38f644491de95b2dd3a1da
-      internalID: -815843236
+      spriteID: 616025ebf0df049469388891e08c948b
+      internalID: 1694544577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: YellowIngredient
+      name: EnemyWalk_4
       rect:
         serializedVersion: 2
-        x: 962
-        y: 329
-        width: 370
-        height: 168
+        x: 2655
+        y: 45
+        width: 600
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd736c6a8ea3e504784701d91e1c4eec
-      internalID: -1589384323
+      spriteID: beefeb89b477c854197eaf884282890a
+      internalID: -1680509403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueIngredient
+      name: EnemyWalk_5
       rect:
         serializedVersion: 2
-        x: 1574
-        y: 331
-        width: 297
-        height: 360
+        x: 3310
+        y: 45
+        width: 600
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,71 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc8da8e300160e44ac5c9827171cfe3
-      internalID: 1085589016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedIngredientCauldron
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 848
-        width: 342
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 689f9aedd14788e4fb3a436d26b89b74
-      internalID: -1190630006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: YellowIngredientCauldron
-      rect:
-        serializedVersion: 2
-        x: 1038
-        y: 890
-        width: 223
-        height: 158
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11cacf588772fe242938783df97030e3
-      internalID: 1189932616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlueIngredientCauldron
-      rect:
-        serializedVersion: 2
-        x: 1346
-        y: 884
-        width: 196
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: accfd29a878009d48bb73acc8ebd1646
-      internalID: -969061334
+      spriteID: ad1132eb3295ae8488afa7f375f3be77
+      internalID: -1668680922
       vertices: []
       indices: 
       edges: []
@@ -309,15 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BlueIngredient: 1085589016
-      BlueIngredientCauldron: -969061334
-      Cauldron: -1967869772
-      Mixture: -742533024
-      RedIngredient: -815843236
-      RedIngredientCauldron: -1190630006
-      Table: 1521997628
-      YellowIngredient: -1589384323
-      YellowIngredientCauldron: 1189932616
+      EnemyWalk_0: -1731636954
+      EnemyWalk_1: 760386671
+      EnemyWalk_2: 1397327155
+      EnemyWalk_3: 1694544577
+      EnemyWalk_4: -1680509403
+      EnemyWalk_5: -1668680922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

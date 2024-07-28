@@ -13,7 +13,6 @@ public class EnemyFactory : MonoBehaviour
     public Enemy CreateEnemy()
     {
         var enemy = GetEnemyFromPool();
-        enemy.gameObject.SetActive(true);
         enemy.Initialize(WavesManager.CurrentWave.EnemiesTimeToReachPlayer, CreateVulnerabilities());
         return enemy;
     }

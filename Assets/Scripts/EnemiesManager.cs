@@ -11,10 +11,10 @@ public class EnemiesManager : MonoBehaviour
         EnemiesPool = FindObjectsOfType<Enemy>(true);
     }
 
-    public Enemy GetLowestEnemy()
+    public Enemy GetLowestAliveEnemy()
     {
         return EnemiesPool
-            .Where(enemy => enemy.gameObject.activeInHierarchy)
+            .Where(enemy => enemy.IsAlive)
             .OrderBy(enemy => enemy.transform.position.y)
             .FirstOrDefault();
     }

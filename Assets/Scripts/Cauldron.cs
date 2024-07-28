@@ -24,7 +24,7 @@ public class Cauldron : MonoBehaviour
         {
             return;
         }
-        var enemy = enemiesManager.GetLowestEnemy();
+        var enemy = enemiesManager.GetLowestAliveEnemy();
         if (enemy != null)
         {
             enemy.Hit(_mixture);

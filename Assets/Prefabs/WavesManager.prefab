@@ -53,7 +53,7 @@ MonoBehaviour:
     startValue: 0
     endValue: 1
     settings:
-      duration: 0.75
+      duration: 0.5
       ease: 0
       customEase:
         serializedVersion: 2
@@ -64,7 +64,7 @@ MonoBehaviour:
       cycles: 2
       cycleMode: 1
       startDelay: 0
-      endDelay: 2.5
+      endDelay: 2
       useUnscaledTime: 0
       useFixedUpdate: 0
   wavesConfigurations:
@@ -79,4 +79,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35d37fbd80e4ecd43b00d3013ec6546d, type: 2}
   - {fileID: 11400000, guid: 8c7259387b11d0942ba8c533cb6872a7, type: 2}
   - {fileID: 11400000, guid: c0df84ffab142e44fb1c0c9f7c2dc48b, type: 2}
-  - {fileID: 11400000, guid: d238b914b5eff0e4787f02ad6dab535f, type: 2}
+  - {fileID: 11400000, guid: 0c897f1b70b553743bdb53fbf3db9cbc, type: 2}

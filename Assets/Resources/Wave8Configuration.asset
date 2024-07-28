@@ -15,7 +15,7 @@ MonoBehaviour:
   delayBeforeWaveStarts: 1
   enemiesTimeToReachPlayer: 4.5
   subWaves:
-  - delayBeforeStart: 4
+  - delayBeforeStart: 3
     enemiesAmount: 1
     spawnDelay: 2.5
     vulnerabilities:

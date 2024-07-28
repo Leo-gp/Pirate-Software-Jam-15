@@ -113,12 +113,18 @@ public class WavesManager : MonoBehaviour
         }
         if (IsLastWave)
         {
-            gameOverManager.GameOverWin();
+            StartCoroutine(GameOverWin());
         }
         else
         {
             StartNextWave();
         }
+    }
+
+    private IEnumerator GameOverWin()
+    {
+        yield return new WaitForSeconds(2f);
+        gameOverManager.GameOverWin();
     }
 
     private void ValidateWavesConfigurations()
