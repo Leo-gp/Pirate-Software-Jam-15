@@ -42,27 +42,13 @@ public class Cauldron : MonoBehaviour
             {
                 return;
             }
-            MoveIngredientAwayFromCauldron(ingredientBeforeLast);
-            MoveIngredientIntoCauldron(lastIngredient);
+            ingredientBeforeLast.PutOnTable();
+            lastIngredient.PutOnCauldron();
         }
         else
         {
-            MoveIngredientIntoCauldron(lastIngredient);
+            lastIngredient.PutOnCauldron();
         }
-    }
-
-    private static void MoveIngredientIntoCauldron(Ingredient ingredient)
-    {
-        var tr = ingredient.transform;
-        var position = tr.localPosition;
-        tr.localPosition = new Vector2(position.x, position.y += 0.5f);
-    }
-
-    private static void MoveIngredientAwayFromCauldron(Ingredient ingredient)
-    {
-        var tr = ingredient.transform;
-        var position = tr.localPosition;
-        tr.localPosition = new Vector2(position.x, position.y -= 0.5f);
     }
 
     private void UpdateMixture()
@@ -77,7 +63,7 @@ public class Cauldron : MonoBehaviour
         mixtureSprite.color = Color.white;
         if (_ingredients.Count > 0)
         {
-            MoveIngredientAwayFromCauldron(_ingredients[^1]);
+            _ingredients[^1].PutOnTable();
         }
         _ingredients.Clear();
     }
