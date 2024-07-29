@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, InputActions.IPlayerActions, InputActions.IUIActions
 {
     [SerializeField] private Cauldron cauldron;
+    [SerializeField] private Staff staff;
     [SerializeField] private IngredientsManager ingredientsManager;
     [SerializeField] private PauseManager pauseManager;
 
@@ -48,11 +49,11 @@ public class PlayerController : MonoBehaviour, InputActions.IPlayerActions, Inpu
         }
     }
 
-    public void OnLaunchMixture(InputAction.CallbackContext context)
+    public void OnStaffAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            cauldron.LaunchMixture();
+            staff.Attack();
         }
     }
 

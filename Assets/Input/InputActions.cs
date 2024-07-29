@@ -55,7 +55,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Launch Mixture"",
+                    ""name"": ""Staff Attack"",
                     ""type"": ""Button"",
                     ""id"": ""8b5c0253-0a67-4827-b4cc-da8787010f0b"",
                     ""expectedControlType"": ""Button"",
@@ -138,7 +138,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Launch Mixture"",
+                    ""action"": ""Staff Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -149,7 +149,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Launch Mixture"",
+                    ""action"": ""Staff Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -160,7 +160,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Launch Mixture"",
+                    ""action"": ""Staff Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -171,7 +171,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Launch Mixture"",
+                    ""action"": ""Staff Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -225,7 +225,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_AddBlueIngredient = m_Player.FindAction("Add Blue Ingredient", throwIfNotFound: true);
         m_Player_AddYellowIngredient = m_Player.FindAction("Add Yellow Ingredient", throwIfNotFound: true);
         m_Player_AddRedIngredient = m_Player.FindAction("Add Red Ingredient", throwIfNotFound: true);
-        m_Player_LaunchMixture = m_Player.FindAction("Launch Mixture", throwIfNotFound: true);
+        m_Player_StaffAttack = m_Player.FindAction("Staff Attack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_TogglePauseMenu = m_UI.FindAction("Toggle Pause Menu", throwIfNotFound: true);
@@ -293,7 +293,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_AddBlueIngredient;
     private readonly InputAction m_Player_AddYellowIngredient;
     private readonly InputAction m_Player_AddRedIngredient;
-    private readonly InputAction m_Player_LaunchMixture;
+    private readonly InputAction m_Player_StaffAttack;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -301,7 +301,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @AddBlueIngredient => m_Wrapper.m_Player_AddBlueIngredient;
         public InputAction @AddYellowIngredient => m_Wrapper.m_Player_AddYellowIngredient;
         public InputAction @AddRedIngredient => m_Wrapper.m_Player_AddRedIngredient;
-        public InputAction @LaunchMixture => m_Wrapper.m_Player_LaunchMixture;
+        public InputAction @StaffAttack => m_Wrapper.m_Player_StaffAttack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -320,9 +320,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @AddRedIngredient.started += instance.OnAddRedIngredient;
             @AddRedIngredient.performed += instance.OnAddRedIngredient;
             @AddRedIngredient.canceled += instance.OnAddRedIngredient;
-            @LaunchMixture.started += instance.OnLaunchMixture;
-            @LaunchMixture.performed += instance.OnLaunchMixture;
-            @LaunchMixture.canceled += instance.OnLaunchMixture;
+            @StaffAttack.started += instance.OnStaffAttack;
+            @StaffAttack.performed += instance.OnStaffAttack;
+            @StaffAttack.canceled += instance.OnStaffAttack;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -336,9 +336,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @AddRedIngredient.started -= instance.OnAddRedIngredient;
             @AddRedIngredient.performed -= instance.OnAddRedIngredient;
             @AddRedIngredient.canceled -= instance.OnAddRedIngredient;
-            @LaunchMixture.started -= instance.OnLaunchMixture;
-            @LaunchMixture.performed -= instance.OnLaunchMixture;
-            @LaunchMixture.canceled -= instance.OnLaunchMixture;
+            @StaffAttack.started -= instance.OnStaffAttack;
+            @StaffAttack.performed -= instance.OnStaffAttack;
+            @StaffAttack.canceled -= instance.OnStaffAttack;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -416,7 +416,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnAddBlueIngredient(InputAction.CallbackContext context);
         void OnAddYellowIngredient(InputAction.CallbackContext context);
         void OnAddRedIngredient(InputAction.CallbackContext context);
-        void OnLaunchMixture(InputAction.CallbackContext context);
+        void OnStaffAttack(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

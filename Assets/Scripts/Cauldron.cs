@@ -4,34 +4,30 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour
 {
     [SerializeField] private MixturesManager mixturesManager;
-    [SerializeField] private EnemiesManager enemiesManager;
+    [SerializeField] private Staff staff;
     [SerializeField] private SpriteRenderer mixtureSprite;
-    [SerializeField] private AudioClip attackSound;
 
     private readonly List<Ingredient> _ingredients = new();
 
-    private Mixture _mixture;
+    public Mixture CurrentMixture { get; private set; }
 
     public void AddIngredient(Ingredient ingredient)
     {
         _ingredients.Add(ingredient);
         UpdateIngredientsPositions();
         UpdateMixture();
+        staff.UpdateCrystalColor(CurrentMixture.Color);
     }
 
-    public void LaunchMixture()
+    public void Clear()
     {
-        if (_mixture is null)
+        CurrentMixture = null;
+        mixtureSprite.color = Color.white;
+        if (_ingredients.Count > 0)
         {
-            return;
+            _ingredients[^1].PutOnTable();
         }
-        var enemy = enemiesManager.GetLowestAliveEnemy();
-        if (enemy != null)
-        {
-            enemy.Hit(_mixture);
-        }
-        AudioManager.Instance.AudioSource.PlayOneShot(attackSound);
-        Clear();
+        _ingredients.Clear();
     }
 
     private void UpdateIngredientsPositions()
@@ -56,18 +52,7 @@ public class Cauldron : MonoBehaviour
 
     private void UpdateMixture()
     {
-        _mixture = mixturesManager.GetMixtureFromIngredients(_ingredients);
-        mixtureSprite.color = _mixture.Color;
-    }
-
-    private void Clear()
-    {
-        _mixture = null;
-        mixtureSprite.color = Color.white;
-        if (_ingredients.Count > 0)
-        {
-            _ingredients[^1].PutOnTable();
-        }
-        _ingredients.Clear();
+        CurrentMixture = mixturesManager.GetMixtureFromIngredients(_ingredients);
+        mixtureSprite.color = CurrentMixture.Color;
     }
 }

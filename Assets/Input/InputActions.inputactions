@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Launch Mixture",
+                    "name": "Staff Attack",
                     "type": "Button",
                     "id": "8b5c0253-0a67-4827-b4cc-da8787010f0b",
                     "expectedControlType": "Button",
@@ -116,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Launch Mixture",
+                    "action": "Staff Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -127,7 +127,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Launch Mixture",
+                    "action": "Staff Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -138,7 +138,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Launch Mixture",
+                    "action": "Staff Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -149,7 +149,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Launch Mixture",
+                    "action": "Staff Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
