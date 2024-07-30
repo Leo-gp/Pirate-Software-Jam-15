@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 101919796461465845}
@@ -47,9 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixturesManager: {fileID: 0}
-  enemiesManager: {fileID: 0}
+  staff: {fileID: 0}
   mixtureSprite: {fileID: 3711381465907667024}
-  attackSound: {fileID: 8300000, guid: cd15c8a4a692a9b4dafbf7f9ae7b20b0, type: 3}
 --- !u!212 &496503207334622475
 SpriteRenderer:
   m_ObjectHideFlags: 0

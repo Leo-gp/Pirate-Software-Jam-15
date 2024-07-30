@@ -448,10 +448,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366810719}
     - target: {fileID: 482664978174767057, guid: fc479daf5be4fac44895ac4bf62603f5, type: 3}
-      propertyPath: enemiesManager
-      value: 
-      objectReference: {fileID: 4695683345900478955}
-    - target: {fileID: 482664978174767057, guid: fc479daf5be4fac44895ac4bf62603f5, type: 3}
       propertyPath: mixturesManager
       value: 
       objectReference: {fileID: 1887326609}
@@ -777,12 +773,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3231242665925234160, guid: 58408779018a83740b73322442cf2274, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231242665925234160, guid: 58408779018a83740b73322442cf2274, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231242665925234160, guid: 58408779018a83740b73322442cf2274, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231242665925234160, guid: 58408779018a83740b73322442cf2274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3231242665925234160, guid: 58408779018a83740b73322442cf2274, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.25
+      value: -4.2
       objectReference: {fileID: 0}
     - target: {fileID: 3231242665925234160, guid: 58408779018a83740b73322442cf2274, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1143,7 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1919883436357255434, guid: 8a71be525ba9bc348a85e4c25715f6e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.25
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1919883436357255434, guid: 8a71be525ba9bc348a85e4c25715f6e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1448,11 +1456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4481880157666230901, guid: 3158b1b03cc6c874e8ba6744013ca608, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.834
+      value: 1.074
       objectReference: {fileID: 0}
     - target: {fileID: 4481880157666230901, guid: 3158b1b03cc6c874e8ba6744013ca608, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.855
+      value: -3.927
       objectReference: {fileID: 0}
     - target: {fileID: 4481880157666230901, guid: 3158b1b03cc6c874e8ba6744013ca608, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2206,53 +2214,9 @@ PrefabInstance:
       propertyPath: enemiesManager
       value: 
       objectReference: {fileID: 4695683345900478955}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackTweenSettings.cycles
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackTweenSettings.duration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackPositionTweenEndValue.x
-      value: 1.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackPositionTweenEndValue.y
-      value: -2.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackRotationTweenEndValue.z
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackTweenSettings.cycleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackPositionTweenSettings2.cycles
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackRotationTweenSettings2.cycles
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackPositionTweenSettings2.duration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackRotationTweenSettings2.duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162789671945081902, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
-      propertyPath: attackPositionTweenSettings2.cycleMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8437476549972237057, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.65
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 8437476549972237057, guid: 261cff2060f7f12489f9e2f038a15366, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2494,6 +2458,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdf4e7b8ee4f1543aab0c4da1fdc90b, type: 3}
+--- !u!1001 &6973767512850371308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1329065145377575446, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_Name
+      value: Trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2263311298614368465, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 452ecde62259be241bf1c03411fb09fa, type: 3}
 --- !u!1001 &7017426074187881924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3120,3 +3141,4 @@ SceneRoots:
   - {fileID: 7017814746363350479}
   - {fileID: 7017426074187881924}
   - {fileID: 9221836352852309111}
+  - {fileID: 6973767512850371308}

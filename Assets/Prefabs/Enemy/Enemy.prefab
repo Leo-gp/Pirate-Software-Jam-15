@@ -288,7 +288,7 @@ MonoBehaviour:
   - {fileID: 4703144401839869940}
   - {fileID: 6175667170453041706}
   - {fileID: 5336626551917437131}
-  startScale: 0.25
+  startScale: 0.1
   endScale: 1.5
 --- !u!1 &1447991517255115494
 GameObject:

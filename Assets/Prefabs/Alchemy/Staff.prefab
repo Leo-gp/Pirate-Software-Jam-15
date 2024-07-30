@@ -4987,8 +4987,8 @@ MonoBehaviour:
       useFixedUpdate: 0
   attackPositionTweenSettings:
     startFromCurrent: 0
-    startValue: {x: 2.65, y: -3, z: 0}
-    endValue: {x: 1.76, y: -2.83, z: 0}
+    startValue: {x: 3.44, y: -3, z: 0}
+    endValue: {x: 2.25, y: -2.83, z: 0}
     settings:
       duration: 0.1
       ease: 0
