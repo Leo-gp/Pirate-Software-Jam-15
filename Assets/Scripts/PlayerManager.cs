@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     public bool IsDead => CurrentLives <= 0;
 
+    public Action PlayerDied { get; set; }
+
     private void Start()
     {
         CurrentLives = lives;
@@ -21,12 +24,14 @@ public class PlayerManager : MonoBehaviour
 
     public void Hit()
     {
-        AudioManager.Instance.AudioSource.PlayOneShot(hitSound);
+        AudioManager.Instance.SfxAudioSource.PlayOneShot(hitSound);
         cameraManager.RedFlash();
         CurrentLives--;
-        if (IsDead)
+        if (!IsDead)
         {
-            gameOverManager.GameOverLoss();
+            return;
         }
+        PlayerDied?.Invoke();
+        gameOverManager.GameOverLoss();
     }
 }

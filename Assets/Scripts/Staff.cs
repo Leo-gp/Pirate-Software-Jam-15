@@ -35,7 +35,7 @@ public class Staff : MonoBehaviour
             );
             enemy.Hit(cauldron.CurrentMixture);
         }
-        AudioManager.Instance.AudioSource.PlayOneShot(attackSound);
+        AudioManager.Instance.SfxAudioSource.PlayOneShot(attackSound);
         energyParticleEffect.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
         cauldron.Clear();
         _floatingTween.isPaused = true;

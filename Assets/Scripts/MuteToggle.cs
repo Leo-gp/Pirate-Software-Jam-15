@@ -20,6 +20,6 @@ public class MuteToggle : MonoBehaviour
 
     private static void SetAudioMute(bool value)
     {
-        _isMute = AudioManager.Instance.AudioSource.mute = value;
+        _isMute = AudioManager.Instance.SfxAudioSource.mute = AudioManager.Instance.MusicAudioSource.mute = value;
     }
 }

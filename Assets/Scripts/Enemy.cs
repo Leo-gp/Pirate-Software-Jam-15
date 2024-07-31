@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip deathAnimationClip;
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioSource growlAudioSource;
     [SerializeField] private SpriteRenderer bodySpriteRenderer;
     [SerializeField] private GameObject umbrellaGameObject;
     [SerializeField] private GameObject explosionPositionGameObject;
@@ -26,12 +27,28 @@ public class Enemy : MonoBehaviour
     private float _timeToReachPlayer;
     private List<Mixture> _totalVulnerabilities;
     private List<Mixture> _remainingVulnerabilities;
+    private Tween _growlTween;
 
     public Action<Enemy> Died { get; set; }
 
     public bool IsAlive { get; private set; }
 
     public GameObject ExplosionPositionGameObject => explosionPositionGameObject;
+
+    private void Start()
+    {
+        growlAudioSource.mute = AudioManager.Instance.MusicAudioSource.mute;
+    }
+
+    private void OnEnable()
+    {
+        playerManager.PlayerDied += OnPlayerDied;
+    }
+
+    private void OnDisable()
+    {
+        playerManager.PlayerDied -= OnPlayerDied;
+    }
 
     public void Initialize(float timeToReachPlayer, List<Mixture> vulnerabilities)
     {
@@ -63,6 +80,13 @@ public class Enemy : MonoBehaviour
         Tween.PositionY(transform, playerManager.PlayerPosition.position.y, _timeToReachPlayer, Ease.Linear)
             .OnComplete(this, target => target.OnReachedPlayer());
         Tween.Scale(transform, startScale, endScale, _timeToReachPlayer, Ease.Linear);
+        GrowlWhenCloseToPlayer();
+    }
+
+    private void GrowlWhenCloseToPlayer()
+    {
+        _growlTween = Tween.Delay(this, _timeToReachPlayer - growlAudioSource.clip.length,
+            _ => growlAudioSource.Play());
     }
 
     private void OnReachedPlayer()
@@ -74,10 +98,17 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         Tween.StopAll(transform);
+        _growlTween.Stop();
+        growlAudioSource.Stop();
         StartCoroutine(RunDieAnimation());
         IsAlive = false;
         Died?.Invoke(this);
         Died = null;
+    }
+
+    private void OnPlayerDied()
+    {
+        growlAudioSource.Stop();
     }
 
     private IEnumerator RunDieAnimation()
@@ -86,7 +117,7 @@ public class Enemy : MonoBehaviour
         {
             yield break;
         }
-        AudioManager.Instance.AudioSource.PlayOneShot(deathSound);
+        AudioManager.Instance.SfxAudioSource.PlayOneShot(deathSound);
         umbrellaGameObject.SetActive(false);
         animator.SetTrigger(DieAnimationTrigger);
         yield return new WaitForSeconds(deathAnimationClip.length);

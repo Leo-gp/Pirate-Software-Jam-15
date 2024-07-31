@@ -16,6 +16,6 @@ public class Ingredient : MonoBehaviour
     {
         ingredientOnCauldronSprite.gameObject.SetActive(true);
         ingredientOnTableSprite.gameObject.SetActive(false);
-        AudioManager.Instance.AudioSource.PlayOneShot(audioClip);
+        AudioManager.Instance.SfxAudioSource.PlayOneShot(audioClip);
     }
 }

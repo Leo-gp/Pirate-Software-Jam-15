@@ -595,17 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5fa78b02754118b94abe3b0ce3c0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1884195621 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4171607955339176558, guid: f78f61cf39039464ca16e003ccca3435, type: 3}
-  m_PrefabInstance: {fileID: 4895545956886603232}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1887326609 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 275587482227134855, guid: 96bfd25d913d3fa4b85ea05fc6d049fb, type: 3}
@@ -2471,10 +2460,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2126366156}
     - target: {fileID: 8258681206406523294, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 229282487}
-    - target: {fileID: 8258681206406523294, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
       propertyPath: gameOverWinScreen
       value: 
       objectReference: {fileID: 1692207402}
@@ -2482,10 +2467,6 @@ PrefabInstance:
       propertyPath: gameOverLossScreen
       value: 
       objectReference: {fileID: 229282487}
-    - target: {fileID: 8258681206406523294, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
-      propertyPath: gameOverScreenTitle
-      value: 
-      objectReference: {fileID: 1884195621}
     - target: {fileID: 8258681206406523294, guid: 2d0e804803be1574ebd39d78e5cda37c, type: 3}
       propertyPath: gameOverWinFirstSelectedButton
       value: 

@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private AudioSource sfxAudioSource;
 
-    public AudioSource AudioSource => audioSource;
+    public AudioSource MusicAudioSource => musicAudioSource;
+
+    public AudioSource SfxAudioSource => sfxAudioSource;
 
     public static AudioManager Instance { get; private set; }
 

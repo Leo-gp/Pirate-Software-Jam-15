@@ -97,7 +97,7 @@ public class WavesManager : MonoBehaviour
         var waveIndex = wavesConfigurations.ToList().IndexOf(CurrentWave);
         waveStartedText.SetText($"Level {waveIndex + 1}");
         Tween.Alpha(waveStartedText, waveStartedTextAlphaTweenSettings);
-        AudioManager.Instance.AudioSource.PlayOneShot(waveStartedSound);
+        AudioManager.Instance.SfxAudioSource.PlayOneShot(waveStartedSound);
     }
 
     private void OnEnemyDefeated(Enemy enemy)

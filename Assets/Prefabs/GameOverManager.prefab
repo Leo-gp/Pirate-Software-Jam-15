@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1709732110749110603}
   - component: {fileID: 8258681206406523294}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameOverManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f4fdf1d0a418e992dd1c72bf10280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseManager: {fileID: 0}
+  gameOverLossScreen: {fileID: 0}
+  gameOverWinScreen: {fileID: 0}
+  gameOverLossFirstSelectedButton: {fileID: 0}
+  gameOverWinFirstSelectedButton: {fileID: 0}
+  gameOverLossSound: {fileID: 8300000, guid: 4752af5adc179f24f84dc514033e5b6e, type: 3}
+  gameOverWinSound: {fileID: 8300000, guid: b988b0e6754c55745a735772ad1f9c8a, type: 3}

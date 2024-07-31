@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave10Configuration
   m_EditorClassIdentifier: 
   delayBeforeWaveStarts: 1
-  enemiesTimeToReachPlayer: 4.5
+  enemiesTimeToReachPlayer: 5
   subWaves:
   - delayBeforeStart: 3
     enemiesAmount: 1
