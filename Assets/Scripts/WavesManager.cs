@@ -95,7 +95,7 @@ public class WavesManager : MonoBehaviour
     private void DisplayWaveStartedText()
     {
         var waveIndex = wavesConfigurations.ToList().IndexOf(CurrentWave);
-        waveStartedText.SetText($"Wave {waveIndex + 1} incoming!");
+        waveStartedText.SetText($"Level {waveIndex + 1}");
         Tween.Alpha(waveStartedText, waveStartedTextAlphaTweenSettings);
         AudioManager.Instance.AudioSource.PlayOneShot(waveStartedSound);
     }
