@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private SpriteRenderer bodySpriteRenderer;
     [SerializeField] private GameObject umbrellaGameObject;
+    [SerializeField] private GameObject explosionPositionGameObject;
     [SerializeField] private float fadeOutOnDeathTime;
     [SerializeField] private SpriteRenderer[] vulnerabilitiesSprites;
     [SerializeField] private float startScale;
@@ -29,6 +30,8 @@ public class Enemy : MonoBehaviour
     public Action<Enemy> Died { get; set; }
 
     public bool IsAlive { get; private set; }
+
+    public GameObject ExplosionPositionGameObject => explosionPositionGameObject;
 
     public void Initialize(float timeToReachPlayer, List<Mixture> vulnerabilities)
     {

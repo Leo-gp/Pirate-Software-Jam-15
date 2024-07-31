@@ -7,7 +7,8 @@ public class Staff : MonoBehaviour
     [SerializeField] private EnemiesManager enemiesManager;
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private SpriteRenderer crystalSprite;
-    [SerializeField] private ParticleSystem particleEffect;
+    [SerializeField] private ParticleSystem energyParticleEffect;
+    [SerializeField] private ParticleSystem explosionParticleEffect;
     [SerializeField] private TweenSettings<float> floatingTweenSettings;
     [SerializeField] private TweenSettings<Vector3> attackPositionTweenSettings;
     [SerializeField] private TweenSettings<Vector3> attackRotationTweenSettings;
@@ -28,14 +29,24 @@ public class Staff : MonoBehaviour
         var enemy = enemiesManager.GetLowestAliveEnemy();
         if (enemy != null)
         {
+            PlayExplosionEffectAtPosition
+            (
+                (Vector2)enemy.ExplosionPositionGameObject.transform.position, cauldron.CurrentMixture.Color
+            );
             enemy.Hit(cauldron.CurrentMixture);
         }
         AudioManager.Instance.AudioSource.PlayOneShot(attackSound);
-        particleEffect.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+        energyParticleEffect.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
         cauldron.Clear();
         _floatingTween.isPaused = true;
         UpdateCrystalColor(Color.white);
         RunAttackEffect();
+    }
+
+    private void PlayExplosionEffectAtPosition(Vector3 position, Color color)
+    {
+        explosionParticleEffect.transform.position = position;
+        PlayParticleEffectWithColor(explosionParticleEffect, color);
     }
 
     public void UpdateCrystalColor(Color color)
@@ -43,15 +54,15 @@ public class Staff : MonoBehaviour
         crystalSprite.color = color;
         if (color != Color.white)
         {
-            PlayParticleEffectWithColor(color);
+            PlayParticleEffectWithColor(energyParticleEffect, color);
         }
     }
 
-    private void PlayParticleEffectWithColor(Color color)
+    private void PlayParticleEffectWithColor(ParticleSystem particleSystem, Color color)
     {
-        var particleEffectMain = particleEffect.main;
+        var particleEffectMain = particleSystem.main;
         particleEffectMain.startColor = color;
-        particleEffect.Play();
+        particleSystem.Play();
     }
 
     private void RunFloatEffect()
