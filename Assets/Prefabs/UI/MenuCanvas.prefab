@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487371372333262644, guid: 977d0f901c8a9cd4f9ba1064edc12a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6487371372333262644, guid: 977d0f901c8a9cd4f9ba1064edc12a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -375,11 +375,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487371372333262644, guid: 977d0f901c8a9cd4f9ba1064edc12a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6487371372333262644, guid: 977d0f901c8a9cd4f9ba1064edc12a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487371372333262644, guid: 977d0f901c8a9cd4f9ba1064edc12a20, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6487371372333262644, guid: 977d0f901c8a9cd4f9ba1064edc12a20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
